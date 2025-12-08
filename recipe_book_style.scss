@@ -40,6 +40,8 @@ align-items: center ;
     display:flex;
     flex-direction: row;
     width: 100%;
+    margin: 0 auto;
+    
 
     .left-side-page{
         width: 45%;
@@ -80,6 +82,7 @@ align-items: center ;
     font-size: 15px;
     align-self: flex-start;
     margin-bottom: 10px;
+    cursor: pointer;
 
 }
 
@@ -115,8 +118,10 @@ align-items: center ;
 
 
 .recipe-picture{
-    height: 50px;
-    width: 80px;
+    max-width: 20%;
+    height: auto;
+    width: auto;
+    object-fit: cover;
     
 }
 
@@ -149,6 +154,7 @@ align-items: center ;
 
 .recipe-main-page{
     width: 75%;
+    margin-right: auto;
 }
 
 
@@ -156,6 +162,7 @@ align-items: center ;
     display: flex;
     gap: 10px;
     justify-content: flex-start;
+    cursor:pointer;
     
 }
 
@@ -169,6 +176,7 @@ align-items: center ;
     font-size: 15px;
     align-self: flex-end;
     margin-bottom: 10px;
+    cursor:pointer;
 }
 
 .cancel-button{
@@ -181,6 +189,7 @@ align-items: center ;
     font-size: 15px;
     align-self: flex-end;
     margin-bottom: 10px;
+    cursor:pointer;
 }
 
 .recipe-edit-page{
@@ -233,11 +242,10 @@ align-items: center ;
 
 
     .recipe-img-wrapper{
-        margin-top: 25px;
+       width: 100%;
         
         .recipe-image-preview{
-            height: 170px;
-            width: 270px;
+            max-width: 100%;
             object-fit: cover;
         }
     }
@@ -307,6 +315,7 @@ align-items: center ;
         font-size: 15px;
         align-self: center;
         flex-shrink: 0;
+        cursor:pointer;
     }
 }
 
@@ -328,4 +337,5 @@ align-items: center ;
     font-size: 15px;
     align-self: flex-start;
     margin-top: 10px;
+    cursor:pointer;
 }

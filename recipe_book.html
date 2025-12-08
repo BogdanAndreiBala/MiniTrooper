@@ -25,36 +25,36 @@
 
                 <button class = "new-recipe-button">New Recipe</button>
                 <hr class = "recipe-list-separator">
-                <ul class = "recipe-list">
-                    <li class = "recipe-list-item">
+                <div class = "recipe-list">
+                    <div class = "recipe-list-item">
                         <div class = "recipe-list-item-text">
                             <div class = "recipe-name">Toast</div>
                             <div class = "recipe-description">sdasd</div>
                         </div>
                         <img src = "pictures/toast.jpeg" alt = "Toast picture" class = recipe-picture>
                         
-                    </li>
+                    </div>
 
 
-                    <li class = "recipe-list-item">
+                    <div class = "recipe-list-item">
                         <div class = "recipe-list-item-text">
                             <div class = "recipe-name">Avocado</div>
                             <div class = "recipe-description">ajskjassaasda asdasdasdlalkalaka</div>
                         </div>
                         <img src = "pictures/avocado.avif" alt = "Avocado picture" class = recipe-picture>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
 
 
         </section>
         <section class = "right-side-page">
 
-            <div class = "recipe-main-page">
+            <form class = "recipe-main-page">
 
                 <div class = "buttons-recipe-edit-page">
-                    <button class = "save-button">Save</button>
-                    <button class = "cancel-button">Cancel</button>
+                    <button type = "submit" class = "save-button">Save</button>
+                    <button type = "reset" class = "cancel-button">Cancel</button>
                 </div>
 
                 <div class = "recipe-edit-page">
@@ -82,24 +82,24 @@
                         <div class = "ingredients-fields">
                             <input type = "text" id = "ingredient-input-1" class = "ingredient-input">
                             <input type = "text" id = "ingredient-quantity-input-1"  class = "ingredient-quantity-input">
-                            <button class = "remove-ingredient-button">X</button>
+                            <button type="button" class = "remove-ingredient-button">X</button>
                         </div>
 
                         <div class = "ingredients-fields">
                             <input type = "text" id = "ingredient-input-2" class = "ingredient-input">
                             <input type = "text"  id = "ingredient-quantity-input-2" class = "ingredient-quantity-input">
-                            <button class = "remove-ingredient-button">X</button>
+                            <button type="button" class = "remove-ingredient-button">X</button>
                         </div>
                         <hr class = "recipe-main-page-separator">
 
-                        <button class = "add-ingredient-button">Add Ingredient</button>
+                        <button type="button" class = "add-ingredient-button">Add Ingredient</button>
                     </div>
 
                     
                 </div>
 
 
-            </div>
+            </form>
 
         </section>
     </main>
@@ -110,10 +110,9 @@
 
 
 <!-- cursor =pointer pt manute 
-remove the margin
- reset default padding and margin 
- no list for componens, divs
+remove the margin : DONE
+ no list for componens, divs : DONE
  right side is a form
  type of buttons
  pull request
- video wind shift screen
+ video wind shift screen -->

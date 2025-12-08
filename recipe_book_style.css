@@ -30,6 +30,7 @@ body {
   display: flex;
   flex-direction: row;
   width: 100%;
+  margin: 0 auto;
 }
 .page-layout .left-side-page {
   width: 45%;
@@ -62,6 +63,7 @@ body {
   font-size: 15px;
   align-self: flex-start;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .recipe-list-separator {
@@ -90,8 +92,11 @@ body {
 }
 
 .recipe-picture {
-  height: 50px;
-  width: 80px;
+  max-width: 20%;
+  height: auto;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .recipe-list-item-text {
@@ -116,12 +121,14 @@ body {
 /* right side styles */
 .recipe-main-page {
   width: 75%;
+  margin-right: auto;
 }
 
 .buttons-recipe-edit-page {
   display: flex;
   gap: 10px;
   justify-content: flex-start;
+  cursor: pointer;
 }
 
 .save-button {
@@ -134,6 +141,7 @@ body {
   font-size: 15px;
   align-self: flex-end;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .cancel-button {
@@ -146,6 +154,7 @@ body {
   font-size: 15px;
   align-self: flex-end;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .recipe-edit-page {
@@ -190,11 +199,10 @@ body {
   color: gray;
 }
 .recipe-image-url-field .recipe-img-wrapper {
-  margin-top: 25px;
+  width: 100%;
 }
 .recipe-image-url-field .recipe-img-wrapper .recipe-image-preview {
-  height: 170px;
-  width: 270px;
+  max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -256,6 +264,7 @@ body {
   font-size: 15px;
   align-self: center;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
 .recipe-main-page-separator {
@@ -274,4 +283,5 @@ body {
   font-size: 15px;
   align-self: flex-start;
   margin-top: 10px;
+  cursor: pointer;
 }/*# sourceMappingURL=recipe_book_style.css.map */
