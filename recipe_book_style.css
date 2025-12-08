@@ -1,3 +1,7 @@
+body {
+  margin: 0;
+}
+
 .main-page-header {
   background-color: rgb(222, 222, 222);
   display: flex;
