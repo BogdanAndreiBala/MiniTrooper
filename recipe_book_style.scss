@@ -1,9 +1,13 @@
 $grenn-button-color: rgb(71, 168, 71);
 $red-button-color: rgb(208, 71, 71);
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 body{
     margin: 0;
+    min-height: 100vh;
 }
 
 
@@ -13,8 +17,11 @@ display: flex;
 color: rgb(73, 73, 73);
 font-family: Arial, Helvetica, sans-serif;
 padding: 5px;
+padding-left:20px;
 font-size: 10px;
 align-items: center ;
+position:relative;
+border-bottom: 1px solid rgb(6, 6, 6);
 }
 
 
@@ -32,14 +39,71 @@ align-items: center ;
             font-size: 15px;
         }
     }
+
+    @media (max-width: 768px){
+        position : absolute;
+        left:0;
+        top:100%;
+        margin-top: 1px;
+        width: 100%;
+        background-color: rgb(222, 222, 222);
+        flex-direction: column;
+        gap:25px;
+        padding-left:20px;
+        max-height:0;
+        padding-top:0;
+        padding-bottom: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+        
+
+        li{
+            text-align: left;
+        }
+
+        &.show{
+            display:flex;
+            max-height: 100px;
+            padding:20px;
+        }
+
+    }
     
 }
+
+
+.hamburger-menu{
+    display:none;
+    cursor:pointer;
+
+
+    @media (max-width: 768px){
+        display:block;
+        margin-left: auto;
+        padding: 8px;
+        margin-right:10px;
+        border: 1px solid rgb(150, 150, 150);
+        border-radius: 5px;;
+    }
+}
+
+
+.bar{
+    display:block;
+    width: 30px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: rgb(150, 150, 150);
+}
+
+
+
 
 
 .page-layout{
     display:flex;
     flex-direction: row;
-    width: 100%;
+    min-width: 100%;
     margin: 0 auto;
     
 
@@ -54,6 +118,25 @@ align-items: center ;
         padding: 10px;
         min-width: 400px;
     }
+
+
+    @media (max-width: 768px){
+        flex-direction:column;
+
+        .left-side-page{
+            width: 100%;
+            padding: 10px;
+            min-width: 0px;
+        }
+
+        .right-side-page{
+            width: 100%;
+            min-width: 0px;
+        }
+    }
+
+
+
 }
 
 
@@ -68,6 +151,15 @@ align-items: center ;
     align-items: flex-end;
     margin-left: auto;
     gap: 10px;
+
+
+    @media (max-width: 768px){
+        width: 100%;
+        margin-left:0;
+        align-items: stretch;
+    }
+
+
 }
 
 
@@ -155,6 +247,11 @@ align-items: center ;
 .recipe-main-page{
     width: 75%;
     margin-right: auto;
+
+
+    @media (max-width: 768px){
+        width: 100%;
+    }
 }
 
 
@@ -246,7 +343,12 @@ align-items: center ;
         
         .recipe-image-preview{
             max-width: 100%;
-            object-fit: cover;
+            object-fit:cover;
+
+
+            @media (max-width: 768px){
+                width: 100%;
+            }
         }
     }
 }
@@ -271,6 +373,11 @@ align-items: center ;
         border-radius: 3px;
         color: gray;
         resize: none;
+
+
+        @media (max-width: 768px){
+            height: 70px;
+        }
     }
 }
 
@@ -293,6 +400,14 @@ align-items: center ;
         border: 1px solid rgb(200, 200, 200);
         border-radius: 3px;
         color: gray;
+
+        &.input-error{
+            border: 2px solid red;
+        }
+
+        @media (max-width: 768px){
+            width: 70%; 
+        }
     }
 
     .ingredient-quantity-input{
@@ -303,6 +418,14 @@ align-items: center ;
         border: 1px solid rgb(200, 200, 200);
         border-radius: 3px;
         color: gray;
+
+        &.input-error{
+            border: 2px solid red;
+        }
+
+        @media (max-width: 768px){
+            width: 10%; 
+        }
     }
 
     .remove-ingredient-button{
@@ -310,12 +433,16 @@ align-items: center ;
         color: white;
         border-radius: 4px;
         border: none;
-        height: 30px;
-        width: 30px;
-        font-size: 15px;
+        height: 22px;
+        width: 10%;
+        font-size: 10px;
         align-self: center;
         flex-shrink: 0;
         cursor:pointer;
+
+        @media (max-width: 768px){
+            width: 10%;
+        }
     }
 }
 

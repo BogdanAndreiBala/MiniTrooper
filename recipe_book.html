@@ -10,6 +10,15 @@
 
     <header class = "main-page-header">
         <h1>Recipe Book</h1>
+
+
+        <div class="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+
         <nav>
             <ul class = "nav-list">
                 <li><a href = "#">Authentificate</a></li>
@@ -90,6 +99,14 @@
                             <input type = "text"  id = "ingredient-quantity-input-2" class = "ingredient-quantity-input">
                             <button type="button" class = "remove-ingredient-button">X</button>
                         </div>
+
+                        <div class = "ingredients-fields">
+                            <input type = "text" id = "ingredient-input-3" class = "ingredient-input input-error" required>
+                            <input type = "text"  id = "ingredient-quantity-input-3" class = "ingredient-quantity-input input-error" required>
+                            <button type="button" class = "remove-ingredient-button">X</button>
+                        </div>
+
+
                         <hr class = "recipe-main-page-separator">
 
                         <button type="button" class = "add-ingredient-button">Add Ingredient</button>
@@ -103,16 +120,34 @@
 
         </section>
     </main>
+
+
+    <script>
+    const hamburger = document.querySelector(".hamburger-menu");
+    const navMenu = document.querySelector(".nav-list");
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+    });
+    </script>
         
     
 </body>
 </html>
 
 
-<!-- cursor =pointer pt manute 
+<!--
+ cursor =pointer pt manute :DONE
 remove the margin : DONE
  no list for componens, divs : DONE
- right side is a form
- type of buttons
- pull request
- video wind shift screen -->
+ right side is a form DONE
+ type of buttons : DONE
+ pull request : DONE
+ video wind shift screen 
+ image change from pixels : DONE
+ auto on right : DONE
+
+
+
+
+ why 100% won t scroll
+ -->
