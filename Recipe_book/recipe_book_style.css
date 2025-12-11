@@ -1,10 +1,12 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 .main-page-header {
@@ -118,7 +120,7 @@ body {
 .recipe-section {
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 85%;
   align-items: flex-end;
   margin-left: auto;
   gap: 10px;
@@ -167,6 +169,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .recipe-picture {
@@ -194,6 +197,57 @@ body {
   font-size: 15px;
   color: rgb(100, 100, 100);
   align-self: self-start;
+}
+
+.toast-options {
+  display: flex;
+  flex-direction: column;
+}
+.toast-options p {
+  color: rgb(47, 162, 47);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.toast-options-ingredients {
+  display: flex;
+  flex-direction: column;
+}
+
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 5px;
+}
+.options-group label {
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 7px;
+  border: 1px solid;
+  background-color: rgb(243, 215, 179);
+}
+
+#delivery-address-input {
+  width: 70%;
+  height: 30px;
+  font-size: 10px;
+  padding: 5px;
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 3px;
+  color: gray;
+}
+
+.recipe-list-item + .toast-options {
+  max-height: 0px;
+  overflow: hidden;
+  transition-property: max-height;
+  transition-duration: 0.5s;
+}
+
+.recipe-list-item:hover + .toast-options {
+  max-height: 800px;
 }
 
 /* right side styles */
