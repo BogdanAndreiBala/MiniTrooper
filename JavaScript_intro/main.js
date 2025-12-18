@@ -2,12 +2,15 @@
 0. In your HTML, import this JavaScript file. Bonus points: try to do it from the <head> without blocking the <body> rendering.
 */
 //TODO:
-
+for (let i = 0; i < 10000000000; i++) 
+  continue;
 
 /*
 1. Variable scopes: based on MDN, make an example how function scope, block scope, and global scope:
 * https://developer.mozilla.org/en-US/docs/Glossary/Scope
 */
+console.log("EX: 1:");
+console.log("------------------------------");
 
 const globalVar = 'I am a global variable';
 function scopeExercise() {
@@ -33,6 +36,10 @@ console.log(globalVar); // Should work
 
 Observations: the '${}' syntax only works with backticks ``, not with single '' or double "" quotes.
 */
+
+console.log("EX 2:");
+console.log("------------------------------");
+
 const firstName = 'Ada';
 const lastName = 'Lovelace';
 const age = 36;
@@ -43,6 +50,10 @@ console.log(`Bio: Hello, my name is ${firstName} ${lastName}, I was born ${age} 
 /*
 3. Objects: Declare an object, access/update properties, add a new property, delete a property, and iterate keys.
 */
+
+console.log("EX 3:");
+console.log("------------------------------");
+
 const person = {
   name: 'Ada',
   age: 36,
@@ -102,6 +113,10 @@ for(const [key, value] of Object.entries(person)){
 4. Write a function that makes a string sentence cased - starts with capital letter and ends with "."
 * Don't focus on edge cases for now (like multiple spaces, punctuation, etc), it needs only to handle this string.
 */
+
+console.log("EX 4:");
+console.log("------------------------------");
+
 const sentence = '   hello there GENERAL KENOBI   ';
 
 function toSentenceCase(str) {
@@ -134,6 +149,9 @@ const greeting = 'Ho Ho Ho! Merry Christmas!';
 5. Iterate the greeting, log the current character, index and 🎅.
 */
 
+console.log("EX 5:");
+console.log("------------------------------");
+
 //for in parses the indexs, parseInt converts them to integers and then i print the character at that index, the index and the emoji
 function iterateString(str){
   let result = "\n";
@@ -153,6 +171,10 @@ console.log('Indexed iteration:', iterateString(greeting));
 /*
 6. Write a function that receives the array below as parameters and returns a new array which has all the elements added with 2
 */
+
+console.log("EX 6:");
+console.log("------------------------------");
+
 var strArr = ['13', '2', '34', '14', '5', '86', '3.46'];
 //use a lambda function inside map to convert each element to number, add 2, convert back to string and return the new array
 function addInNewArray(arr) {
@@ -164,6 +186,10 @@ console.log('Add in new array: ', addInNewArray(strArr));
 /* 
 7. Implement a function that receives an array of objects and a key name and returns an array with all the values corresponding to the key of the objects in the array.
 */
+
+console.log("EX 7:");
+console.log("------------------------------");
+
 const mappings = [
   {id: 1, color: 'magenta', height: 15, width: 20, distance: 10},
   {id: 2, color: 'red', height: 5, width: 30, distance: 15},
@@ -184,6 +210,10 @@ console.log(pluck(mappings, 'color'));  // => ['magenta', 'red', 'green' .......
 /*
 9. Implement a function that returns the area of all elements in the above array, area = height * width.
 */
+
+console.log("EX 9:");
+console.log("------------------------------");
+
 function calculateArea(arr) {
   const areas = arr.map((element) => element.height * element.width);
   return areas;
@@ -193,6 +223,9 @@ console.log(calculateArea(mappings));
 /*
 10. Write a function that returns a subset of the above array where the elements have an area smaller or equal to 100
 */
+
+console.log("EX 10:");
+console.log("------------------------------");
 
 function filterArr(arr) {
   const filtered = calculateArea(arr).filter((area) => area <=100);
@@ -206,6 +239,9 @@ The iterator function receives each element in the array as a parameter and must
 If it returns true, the element will not be included by the parent function in the resulting array.
 If returns false it will be included.
 */
+
+console.log("EX 11:");
+console.log("------------------------------");
 
 //returns true is teh element height is >= 10
 function iterator(element){
@@ -222,6 +258,10 @@ console.log(reject(mappings, iterator)); // return an array of objects with heig
 /*
 12. Write a function that return the element with the color 'magenta', null otherwise.
 */
+
+console.log("EX 12:");
+console.log("------------------------------");
+
 //tries to find the element with the specified color, returns it or null if not found
 function findColor(str, color){
   const found = str.find((element) => element.color === color);
@@ -234,6 +274,9 @@ console.log(findColor(mappings, 'magenta'));
 /*
 13. Write a function that returns true if all elements in the array have the area > = 10, false otherwise.
 */
+
+console.log("EX 13:");
+console.log("------------------------------");
 
 
 // function getAreasAreBigger(arr, minArea){
@@ -252,6 +295,10 @@ console.log(getAreasAreBigger(mappings, 10))
 /*
 14. Write a function that returns true if at least one of the array elements has the color 'green'; false otherwise.
 */
+
+console.log("EX 14:");
+console.log("------------------------------");
+
 // .some for at least one lement matching the condition
 function returnAtLeastOneIsOfColor(arr, color){
   const colors = arr.some((element) => element.color === color);
@@ -262,6 +309,10 @@ console.log(returnAtLeastOneIsOfColor(mappings, 'magenta'));
 /*
 15. Write a function that returns the total distance (the sum of the element distances).
 */
+
+console.log("EX 15:");
+console.log("------------------------------");
+
 function getTotalDistance(arr){
   const distances = arr.reduce((total, element) => total + element.distance, 0);
   return distances;
@@ -272,6 +323,10 @@ console.log('Sum of distances: ', getTotalDistance(mappings));
 /*
 16. Write a function that returns an object that counts how many times each color appears in the object array. {red: 2, blue: 1, etc ...}
 */
+
+console.log("EX 16:");
+console.log("------------------------------");
+
 //.reduce uses a return value as accumulator, so for each element of the array the initial value is updated from the 
 //previous iteration. for each element we consider a map where the key is the color. if the color is already in the map we increment its value, 
 // otherwise we add it with value 1
@@ -292,12 +347,44 @@ console.log('Number of colors: ', getNumberOfColors(mappings));
 /*
 17. Write a function that returns an array with all elements having a unique color. Any element after the first one that has a color that would repeat is not included in the array.
 */
+
+console.log("EX 17:");
+console.log("------------------------------");
+
+function getUniqueColors(arr){
+  const uniqueColors = arr.reduce((acc, element) => {
+    if(!acc.some((e) => e.color === element.color))
+      acc.push(element);
+    return acc;
+  }, []);
+  return uniqueColors;
+}
+
 console.log('Unique Colors: ', getUniqueColors(mappings));
 
 /*
 18. Write a function which inverts two numbers.
 */
+
+console.log("EX 18:");
+console.log("------------------------------");
+
 let a = 5, b = 8;
+
+
+//primitives are passed by value, not by reference as objects, so we can t use parameters to swap their values
+// function invertNumbers(){
+//   [a, b] = [b, a];
+// }
+// invertNumbers();
+
+//here i returned an array with the inverted values and used destructuring to assign them to a and b
+function invertNumbers(x, y){
+  return [y, x];
+}
+[a, b] = invertNumbers(a, b);
+
+
 
 console.log('A:', a, 'B:', b);
 
@@ -308,6 +395,10 @@ console.log('A:', a, 'B:', b);
   ...
 ]
 */
+
+console.log("EX 19:");
+console.log("------------------------------");
+
 const classes = [
   [ 'Chemistry', '9AM', 'Mr. Darnick' ],
   [ 'Physics', '10:15AM', 'Mrs. Lithun'],
@@ -316,4 +407,16 @@ const classes = [
 
 const objClasses = [];
 
+function loadClasses(arr){
+  for (const element of arr){
+    const obj = {
+      subject: element[0],
+      time: element[1],
+      teacher: element[2]
+    };
+    objClasses.push(obj);
+  }
+}
+
+loadClasses(classes);
 console.log(objClasses);

@@ -1,14 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="main.js" defer></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Recipe book</title>
+    <link rel="stylesheet" href="recipe_book_style.css" />
   </head>
-  <body></body>
+  <body>
+    <header class="main-page-header">
+      <h1>Recipe Book</h1>
+
+      <div class="hamburger-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#">Authentificate</a></li>
+          <li><a href="#">Shopping List</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page-layout">
+      <section class="left-side-page">
+        <div class="recipe-section">
+          <button class="new-recipe-button" type="button">New Recipe</button>
+          <hr class="recipe-list-separator" />
+          <div class="recipe-list">
+            <div class="recipe-list-item">
+              <div class="recipe-list-item-text">
+                <div class="recipe-name">Toast</div>
+                <div class="recipe-description">sdasd</div>
+              </div>
+              <img
+                src="pictures/toast.jpeg"
+                alt="Toast picture"
+                class="recipe-picture"
+              />
+            </div>
+
+            <div class="toast-options">
+              <div class="toast-options-ingredients">
+                <p>Alegeti ingredientele:</p>
+                <div class="options-group">
+                  <label for="ingredient1"
+                    ><input type="checkbox" id="ingredient1" />Salata
+                    verde</label
+                  >
+                  <label for="ingredient2"
+                    ><input type="checkbox" id="ingredient2" />Rosii</label
+                  >
+                  <label for="ingredient3"
+                    ><input type="checkbox" id="ingredient3" />Ceapa
+                    rosie</label
+                  >
+                  <label for="ingredient4"
+                    ><input type="checkbox" id="ingredient4" />porumb</label
+                  >
+                </div>
+              </div>
+
+              <div class="toast-options-sauce">
+                <p>Alegeti sosul:</p>
+                <div class="options-group">
+                  <label for="sauce1"
+                    ><input type="checkbox" id="sauce1" />Tzatziki</label
+                  >
+                  <label for="sauce2"
+                    ><input type="checkbox" id="sauce2" />Ketchup dulce</label
+                  >
+                  <label for="sauce3"
+                    ><input type="checkbox" id="sauce3" />Ketchup picant</label
+                  >
+                </div>
+              </div>
+
+              <div class="toast-options-cutlery">
+                <p>Doriti tacamuri?</p>
+                <div class="options-group">
+                  <label for="cutlery-yes"
+                    ><input
+                      type="radio"
+                      id="cutlery-yes"
+                      name="cutlery-decision"
+                    />Da</label
+                  >
+                  <label for="cutlery-no"
+                    ><input
+                      type="radio"
+                      id="cutlery-no"
+                      name="cutlery-decision"
+                    />Nu</label
+                  >
+                </div>
+              </div>
+
+              <div class="toast-options-address">
+                <label for="delivery-address-input"
+                  >Adresa de livrare si numarul de contact
+                </label>
+                <textarea
+                  id="delivery-address-input"
+                  class="delivery-address-input"
+                  placeholder="Ex: str. Popesti, nr.1, ap. 10"
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="recipe-list-item">
+              <div class="recipe-list-item-text">
+                <div class="recipe-name">Avocado</div>
+                <div class="recipe-description">
+                  ajskjassaasda asdasdasdlalkalaka
+                </div>
+              </div>
+              <img
+                src="pictures/avocado.avif"
+                alt="Avocado picture"
+                class="recipe-picture"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="right-side-page">
+        <form class="recipe-main-page">
+          <div class="buttons-recipe-edit-page">
+            <button type="submit" class="save-button">Save</button>
+            <button type="reset" class="cancel-button">Cancel</button>
+          </div>
+
+          <div class="recipe-edit-page">
+            <div class="recipe-name-field">
+              <label for="recipe-name-input" class="recipe-name-label"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="recipe-name-input"
+                value="Fries"
+                class="recipe-name-input"
+              />
+            </div>
+
+            <div class="recipe-image-url-field">
+              <label for="recipe-image-url-input" class="recipe-image-url-label"
+                >Image Url</label
+              >
+              <input
+                type="text"
+                id="recipe-image-url-input"
+                class="recipe-image-url-input"
+              />
+              <div class="recipe-img-wrapper">
+                <img
+                  src="pictures/fries.jpeg"
+                  alt="Recipe image preview"
+                  class="recipe-image-preview"
+                />
+              </div>
+            </div>
+
+            <div class="recipe-description-field">
+              <label
+                for="recipe-description-input"
+                class="recipe-description-label"
+                >Description</label
+              >
+              <textarea
+                id="recipe-description-input"
+                class="recipe-description-input"
+              ></textarea>
+            </div>
+
+            <div class="recipe-ingredients-list">
+              <div class="ingredients-fields">
+                <input
+                  type="text"
+                  id="ingredient-input-1"
+                  class="ingredient-input"
+                />
+                <input
+                  type="text"
+                  id="ingredient-quantity-input-1"
+                  class="ingredient-quantity-input"
+                />
+                <button type="button" class="remove-ingredient-button">
+                  X
+                </button>
+              </div>
+
+              <div class="ingredients-fields">
+                <input
+                  type="text"
+                  id="ingredient-input-2"
+                  class="ingredient-input"
+                />
+                <input
+                  type="text"
+                  id="ingredient-quantity-input-2"
+                  class="ingredient-quantity-input"
+                />
+                <button type="button" class="remove-ingredient-button">
+                  X
+                </button>
+              </div>
+
+              <div class="ingredients-fields">
+                <input
+                  type="text"
+                  id="ingredient-input-3"
+                  class="ingredient-input input-error"
+                  required
+                />
+                <input
+                  type="text"
+                  id="ingredient-quantity-input-3"
+                  class="ingredient-quantity-input input-error"
+                  required
+                />
+                <button type="button" class="remove-ingredient-button">
+                  X
+                </button>
+              </div>
+
+              <hr class="recipe-main-page-separator" />
+
+              <button type="button" class="add-ingredient-button">
+                Add Ingredient
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger-menu");
+      const navMenu = document.querySelector(".nav-list");
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
+      });
+    </script>
+  </body>
 </html>
 
-<body>
-  <div>This is a JavaScript introduction page.</div>
-  <script src="main.js"></script>
-</body>
+<!--
+ cursor =pointer pt manute :DONE
+remove the margin : DONE
+ no list for componens, divs : DONE
+ right side is a form DONE
+ type of buttons : DONE
+ pull request : DONE
+ video wind shift screen 
+ image change from pixels : DONE
+ auto on right : DONE
+
+
+redesign github repo MINItrooper
+
+ why 100% won t scroll
+ -->
