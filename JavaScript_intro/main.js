@@ -1,9 +1,9 @@
 /*
 0. In your HTML, import this JavaScript file. Bonus points: try to do it from the <head> without blocking the <body> rendering.
 */
-//TODO:
-for (let i = 0; i < 10000000000; i++) 
-  continue;
+
+// for (let i = 0; i < 10000000000; i++) 
+//   continue;
 
 /*
 1. Variable scopes: based on MDN, make an example how function scope, block scope, and global scope:
@@ -119,27 +119,48 @@ console.log("------------------------------");
 
 const sentence = '   hello there GENERAL KENOBI   ';
 
+// function toSentenceCase(str) {
+//   let copy_sentance = str;
+//   for (const index in str){
+//     const i = parseInt(index);  //tho index refers to the position, it apperat to be of type string
+
+//     //find first non-space character, make it uppercase, create a copy made from the initiol string
+//     if (str[i] !== ' '){
+//       copy_sentance = copy_sentance.slice(0, i ) + copy_sentance[i].toUpperCase() + copy_sentance.slice(i + 1);
+//       break;
+//     }
+//   }
+//   //find last non-space character, add a dot after it
+//   for (let j = copy_sentance.length - 1; j >=0 ; j--){
+//     if(copy_sentance[j] !== ' '){
+//       copy_sentance = copy_sentance.slice(0, j + 1) + "." + copy_sentance.slice(j + 1);
+//       break;
+//     }
+//   }
+
+//   return copy_sentance;
+// }
+
+
+
+
+//!Important
+//WHY METHODS DON T AUTOCOMPLETE ?
+//Because it s not a string object, but a primitive string value
+
+//question: is it ok to convert to string object to use methods?
+
 function toSentenceCase(str) {
-  let copy_sentance = str;
-  for (const index in str){
-    const i = parseInt(index);  //tho index refers to the position, it apperat to be of type string
+  const trimmed = str.trim();
+  if (!trimmed)
+    return "."; //handle empty string case
 
-    //find first non-space character, make it uppercase, create a copy made from the initiol string
-    if (str[i] !== ' '){
-      copy_sentance = copy_sentance.slice(0, i ) + copy_sentance[i].toUpperCase() + copy_sentance.slice(i + 1);
-      break;
-    }
-  }
-  //find last non-space character, add a dot after it
-  for (let j = copy_sentance.length - 1; j >=0 ; j--){
-    if(copy_sentance[j] !== ' '){
-      copy_sentance = copy_sentance.slice(0, j + 1) + "." + copy_sentance.slice(j + 1);
-      break;
-    }
-  }
-
-  return copy_sentance;
+  const formated = trimmed[0].toUpperCase() + trimmed.slice(1).toLowerCase();
+  if(formated.endsWith('.'))
+    return formated;
+  return formated + ".";
 }
+
 console.log('Sentence-cased sentence:', toSentenceCase(sentence) );
 
 
@@ -177,10 +198,17 @@ console.log("------------------------------");
 
 var strArr = ['13', '2', '34', '14', '5', '86', '3.46'];
 //use a lambda function inside map to convert each element to number, add 2, convert back to string and return the new array
+// function addInNewArray(arr) {
+//   const newArr = arr.map((element) => {element = Number(element) + 2; element = element.toString(); return element} );
+//   return newArr;
+// }
+
 function addInNewArray(arr) {
-  const newArr = arr.map((element) => {element = Number(element) + 2; element = element.toString(); return element} );
+  const newArr = arr.map((element) => (Number(element) + 2).toString());
   return newArr;
 }
+
+
 console.log('Add in new array: ', addInNewArray(strArr));
 
 /* 
@@ -405,18 +433,31 @@ const classes = [
   [ 'Math', '11:30AM', 'Mrs. Vitalis' ]
 ];
 
-const objClasses = [];
+let objClasses = [];
 
-function loadClasses(arr){
-  for (const element of arr){
-    const obj = {
-      subject: element[0],
-      time: element[1],
-      teacher: element[2]
-    };
-    objClasses.push(obj);
-  }
+// function loadClasses(arr){
+//   for (const element of arr){
+//     const obj = {
+//       subject: element[0],
+//       time: element[1],
+//       teacher: element[2]
+//     };
+//     objClasses.push(obj);
+//   }
+// }
+
+function loadClasses(arr) {
+  //destructuring array, basically telling js that my element in array is splin in more parts
+  //have to use grouping () because otherise js will treat {} as function declaration and not as obj constructor 
+  return arr.map(([subject, time, teacher]) => ({
+    subject: subject,
+    time : time,
+    teacher : teacher
+    
+  }))
 }
 
-loadClasses(classes);
+ objClasses = loadClasses(classes);
+
+//loadClasses(classes);
 console.log(objClasses);
