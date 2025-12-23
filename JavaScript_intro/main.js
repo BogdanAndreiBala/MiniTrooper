@@ -196,7 +196,7 @@ console.log('Indexed iteration:', iterateString(greeting));
 console.log("EX 6:");
 console.log("------------------------------");
 
-var strArr = ['13', '2', '34', '14', '5', '86', '3.46'];
+let strArr = ['13', '2', '34', '14', '5', '86', '3.46'];
 //use a lambda function inside map to convert each element to number, add 2, convert back to string and return the new array
 // function addInNewArray(arr) {
 //   const newArr = arr.map((element) => {element = Number(element) + 2; element = element.toString(); return element} );
