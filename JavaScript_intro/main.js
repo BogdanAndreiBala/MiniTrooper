@@ -222,7 +222,7 @@ const mappings = [
   {id: 1, color: 'magenta', height: 15, width: 20, distance: 10},
   {id: 2, color: 'red', height: 5, width: 30, distance: 15},
   {id: 3, color: 'magenta', height: 7, width: 9, distance: 8},
-  {id: 4, color: 'gray', height: 2, width: 3, distance: 3},
+  {id: 4, color: 'gray', height: 2, width: 30, distance: 3},
   {id: 5, color: 'blue', height: 10, width: 10, distance: 2},
   {id: 6, color: 'crimson', height: 7, width: 8, distance: 16},
 ];
@@ -256,8 +256,11 @@ console.log("EX 10:");
 console.log("------------------------------");
 
 function filterArr(arr) {
-  const filtered = calculateArea(arr).filter((area) => area <=100);
-  return filtered; 
+  const filtered = arr.filter((element) =>{
+    const area = element.height * element.width;
+    return area <= 100;
+  } )
+  return filtered;
 }
 console.log(filterArr(mappings));
 
@@ -314,7 +317,10 @@ console.log("------------------------------");
 
 //.every tests if all elements match the condition
 function getAreasAreBigger(arr, minArea){
-  const areas = calculateArea(arr).every((area) => area >=minArea);
+  const areas = arr.every((element) => {
+    const area = element.width * element.height;
+    return area >= 10;
+  })
   return areas;
 }
 
@@ -359,13 +365,13 @@ console.log("------------------------------");
 //previous iteration. for each element we consider a map where the key is the color. if the color is already in the map we increment its value, 
 // otherwise we add it with value 1
 function getNumberOfColors(arr){
-  const counts = arr.reduce((arr, element) => {
-    if(arr[element.color]){
-      arr[element.color] += 1;
+  const counts = arr.reduce((acc, element) => {
+    if(acc[element.color]){
+      acc[element.color] += 1;
     } else {
-      arr[element.color] = 1;
+      acc[element.color] = 1;
     }
-    return arr;
+    return acc;
   },{});
   return counts;
 }
@@ -380,12 +386,10 @@ console.log("EX 17:");
 console.log("------------------------------");
 
 function getUniqueColors(arr){
-  const uniqueColors = arr.reduce((acc, element) => {
-    if(!acc.some((e) => e.color === element.color))
-      acc.push(element);
-    return acc;
-  }, []);
-  return uniqueColors;
+  const unique = new Set();
+  for (const element of arr)
+    unique.add(element.color)
+  return unique;
 }
 
 console.log('Unique Colors: ', getUniqueColors(mappings));
@@ -450,9 +454,9 @@ function loadClasses(arr) {
   //destructuring array, basically telling js that my element in array is splin in more parts
   //have to use grouping () because otherise js will treat {} as function declaration and not as obj constructor 
   return arr.map(([subject, time, teacher]) => ({
-    subject: subject,
-    time : time,
-    teacher : teacher
+    subject,
+    time,
+    teacher
     
   }))
 }
