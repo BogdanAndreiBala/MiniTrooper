@@ -1,0 +1,17 @@
+.employee-details {
+  display: none;
+  padding: var(--spacing-medium);
+}
+
+.employee-details.expanded {
+  display: flex;
+  animation: 0.3s ease-in-out;
+}
+
+.accordion-icon {
+  transition: transform 0.3 ease;
+}
+
+.accordion-icon.rotate {
+  transform: rotate(180deg);
+}/*# sourceMappingURL=employee-card.css.map */
