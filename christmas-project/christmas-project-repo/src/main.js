@@ -6,6 +6,8 @@ import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import './styles/main.css';
 import './styles/variables.css';
 import './styles/employee-card.css';
+import './styles/nav-bar.css';
+import './styles/statistics.css';
 
 // HELPER COMMENT: Started code to show how to initialize the function from state and features
 
