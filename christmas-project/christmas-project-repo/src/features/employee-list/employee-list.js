@@ -3,7 +3,7 @@ import { createEmployeeCard } from '../employee-card/employee-card.js';
 import { updateRecentlyViewedList } from '../recently-viewed/recently-viewed.js';
 
 const employeesListElement = document.getElementById('employees-list');
-const resultCountElement = document.getElementById('result-count');
+const resultCountElement = document.getElementById('result-number');
 
 export function renderEmployeeList() {
   // Basic rendering of ALL employees (no filters)

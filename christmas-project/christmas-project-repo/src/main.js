@@ -9,6 +9,7 @@ import './styles/employee-card.css';
 import './styles/nav-bar.css';
 import './styles/statistics.css';
 import './features/filter-form/filter-form.js';
+import './styles/employees-list.css';
 
 // HELPER COMMENT: Started code to show how to initialize the function from state and features
 

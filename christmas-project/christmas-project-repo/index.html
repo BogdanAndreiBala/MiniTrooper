@@ -46,8 +46,14 @@
 
       <main class="main">
         <section class="results-section">
-          <h2>Employees List</h2>
-          <p id="result-count" aria-live="polite">Results: 0</p>
+          <h2 class="employees-list-title">
+            Employees List
+            <i class="bi bi-dot"></i>
+          </h2>
+          <p id="result-count">
+            <span class="result-label">Results:</span>
+            <span id="result-number" aria-live="polite">0</span>
+          </p>
 
           <div
             id="pagination-top"
