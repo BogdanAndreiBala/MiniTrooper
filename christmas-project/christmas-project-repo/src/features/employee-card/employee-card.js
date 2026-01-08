@@ -59,6 +59,7 @@ export function createEmployeeCard(employee, clickHandler) {
 
   const statusEmployee = document.createElement('span');
   statusEmployee.setAttribute('class', 'status-badge');
+  statusEmployee.classList.add(`${employee.status}-badge`);
 
   const textStatusEmployee = document.createTextNode(`${employee.status}`);
   statusEmployee.appendChild(textStatusEmployee);
@@ -138,6 +139,6 @@ function toggleAccordion(header, details) {
   const downArrow = header.querySelector('.accordion-icon');
   downArrow.classList.toggle('rotate');
 
-  const isExpanded = details.classList.contains('.expanded');
+  const isExpanded = details.classList.contains('expanded');
   header.setAttribute('description-expanded', isExpanded);
 }
