@@ -12,8 +12,8 @@ import './styles/variables.css';
 import './styles/employee-card.css';
 import './styles/nav-bar.css';
 import './styles/statistics.css';
-import './features/filter-form/filter-form.js';
 import './styles/employees-list.css';
+import { setStatistics } from './features/statistics/statistics.js';
 
 // HELPER COMMENT: Started code to show how to initialize the function from state and features
 
@@ -24,3 +24,4 @@ initializeEmployeesState(employeesData);
 paginationEventListeners();
 const initData = getPaginatedEmployees();
 renderEmployeeList(initData);
+setStatistics();
