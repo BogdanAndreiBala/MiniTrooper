@@ -1,13 +1,15 @@
 //  HELPER COMMENT: Here we don't have a starter code snippet :P
 import { getAllEmployees, setFilteredEmployees } from '../../state/state.js';
-import { renderFilteredEmployeeList } from '../../features/employee-list/employee-list.js';
+import { renderEmployeeList } from '../employee-list/employee-list.js';
+import { getPaginatedEmployees } from '../pagination/pagination.js';
 
 const filterForm = document.getElementById('filter-form');
 const statusSelect = document.getElementById('status-filter');
 const searchFilter = document.getElementById('search-filter');
+const resetButton = document.getElementById('reset-filters');
 
 function applyFilters(event) {
-  //Prevent form submit refresh
+  // Prevent form submission
   if (event) {
     event.preventDefault();
   }
@@ -41,9 +43,24 @@ function applyFilters(event) {
   });
 
   setFilteredEmployees(matchedEmployees);
-  renderFilteredEmployeeList(matchedEmployees);
+  const pageData = getPaginatedEmployees();
+  renderEmployeeList(pageData);
+}
+
+function resetFilters() {
+  if (statusSelect) {
+    statusSelect.value = '';
+  }
+  if (searchFilter) {
+    searchFilter.value = '';
+  }
+  applyFilters();
 }
 
 if (filterForm) {
   filterForm.addEventListener('submit', applyFilters);
+}
+
+if (resetButton) {
+  resetButton.addEventListener('click', resetFilters);
 }

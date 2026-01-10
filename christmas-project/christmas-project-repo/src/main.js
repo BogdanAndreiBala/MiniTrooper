@@ -1,6 +1,10 @@
 import employeesData from './data/employee-data.json';
 import { initializeEmployeesState } from './state/state.js';
 import { renderEmployeeList } from './features/employee-list/employee-list.js';
+import {
+  getPaginatedEmployees,
+  paginationEventListeners,
+} from './features/pagination/pagination.js';
 
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
 import './styles/main.css';
@@ -15,4 +19,8 @@ import './styles/employees-list.css';
 
 initializeEmployeesState(employeesData);
 
-renderEmployeeList();
+//renderEmployeeList();
+
+paginationEventListeners();
+const initData = getPaginatedEmployees();
+renderEmployeeList(initData);

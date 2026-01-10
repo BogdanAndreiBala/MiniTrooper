@@ -38,6 +38,11 @@
   width: 80px;
   margin: 0;
   padding: 0;
+  cursor: pointer;
+}
+.pagination-top #prev-page-top:disabled {
+  background-color: var(--color-light-gray);
+  cursor: -allowed;
 }
 .pagination-top #next-page-top {
   color: var(--color-snow-white);
@@ -48,12 +53,49 @@
   width: 80px;
   margin: 0;
   padding: 0;
+  cursor: pointer;
+}
+.pagination-top #next-page-top:disabled {
+  background-color: var(--color-light-gray);
+  cursor: not-allowed;
 }
 .pagination-top #page-info-top {
   align-self: center;
   font-weight: bold;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+#prev-page-bottom,
+#next-page-bottom {
+  margin: 0;
+  padding: 0;
+  color: var(--color-snow-white);
+  background-color: var(--color-christmas-green);
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  width: 80px;
+  cursor: pointer;
+}
+#prev-page-bottom:disabled,
+#next-page-bottom:disabled {
+  background-color: var(--color-light-gray);
+  cursor: not-allowed;
+}
+
+#page-info-bottom {
+  align-self: center;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#pagination-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-top: 25px;
 }
 
 #employees-list {
