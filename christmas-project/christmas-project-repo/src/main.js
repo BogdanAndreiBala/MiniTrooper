@@ -15,6 +15,7 @@ import './styles/statistics.css';
 import './features/filter-form/filter-form.js';
 import './styles/employees-list.css';
 import { setStatistics } from './features/statistics/statistics.js';
+import './styles/recently-viewed.scss';
 
 // HELPER COMMENT: Started code to show how to initialize the function from state and features
 
