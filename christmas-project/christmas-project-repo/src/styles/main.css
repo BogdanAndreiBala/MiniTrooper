@@ -15,6 +15,17 @@
   min-height: 100vh;
   padding: var(--spacing-medium);
   background-color: var(--color-light-gray);
+
+  @media screen and (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      'header'
+      'nav'
+      'main'
+      'aside'
+      'footer';
+  }
 }
 
 .header {
