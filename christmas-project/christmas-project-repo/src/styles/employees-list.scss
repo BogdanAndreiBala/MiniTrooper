@@ -44,6 +44,9 @@
       background-color: var(--color-light-gray);
       cursor: -allowed;
     }
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+    }
   }
 
   #next-page-top {
@@ -101,6 +104,10 @@
   flex-direction: row;
   justify-content: end;
   margin-top: 25px;
+
+  @media screen and (max-width: 768px) {
+    justify-content: start;
+  }
 }
 
 #employees-list {
