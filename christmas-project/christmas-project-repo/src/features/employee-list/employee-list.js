@@ -1,27 +1,21 @@
-import { getAllEmployees } from '../../state/state.js';
 import { createEmployeeCard } from '../employee-card/employee-card.js';
 import { updateRecentlyViewedList } from '../recently-viewed/recently-viewed.js';
-
+import { updatePaginationControls } from '../pagination/pagination.js';
+import { getFilteredEmployees, getAllEmployees } from '../../state/state.js';
 const employeesListElement = document.getElementById('employees-list');
 const resultCountElement = document.getElementById('result-number');
 
-export function renderEmployeeList() {
-  // Basic rendering of ALL employees (no filters)
+export function renderEmployeeList(employeesList = getAllEmployees()) {
   employeesListElement.innerHTML = '';
-  const allEmployees = getAllEmployees();
-
-  allEmployees.forEach((employee) => {
+  employeesList.forEach((employee) => {
     const card = createEmployeeCard(employee, updateRecentlyViewedList);
     employeesListElement.appendChild(card);
   });
 
-  resultCountElement.textContent = allEmployees.length;
-}
+  const totalMatches = getFilteredEmployees().length;
+  if (resultCountElement) {
+    resultCountElement.textContent = totalMatches;
+  }
 
-export function renderFilteredEmployeeList(filteredList) {
-  employeesListElement.innerHTML = '';
-  filteredList.forEach((employee) => {
-    const card = createEmployeeCard(employee, updateRecentlyViewedList);
-    employeesListElement.appendChild(card);
-  });
+  updatePaginationControls();
 }
