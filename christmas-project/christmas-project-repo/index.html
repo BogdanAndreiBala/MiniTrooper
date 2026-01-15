@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM DOM, să-nălțăm</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>
+          <i class="bi bi-gift inline-icon"></i> Santa's Naughty & Nice List
+        </h1>
+        <p>Review employees' behavior and manage gift delivery</p>
+      </header>
+
+      <div class="filter-area">
+        <h2 class="filter-area-title">Filter Employees</h2>
+        <form id="filter-form">
+          <div class="filter-group filter-status">
+            <label for="status-filter">Status:</label>
+            <select id="status-filter" name="status">
+              <option value="">All employees</option>
+              <option value="good">Nice employees</option>
+              <option value="naughty">Naughty employees</option>
+            </select>
+          </div>
+
+          <div class="filter-group filter-search">
+            <label for="search-filter">Search by name or present:</label>
+            <input
+              type="text"
+              id="search-filter"
+              name="search"
+              placeholder="Type to search..."
+            />
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" id="apply-filters">Apply Filters</button>
+            <button type="button" id="reset-filters">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <main class="main">
+        <section class="results-section">
+          <h2 class="employees-list-title">
+            Employees List
+            <i class="bi bi-dot"></i>
+          </h2>
+          <div id="result-count">
+            <span class="result-label">Results:</span>
+            <span id="result-number" aria-live="polite">0</span>
+          </div>
+
+          <div
+            id="pagination-top"
+            class="pagination pagination-top"
+            role="navigation"
+            aria-label="Pagination"
+          >
+            <button id="prev-page-top" aria-label="Previous page" type="button">
+              Previous
+            </button>
+            <span id="page-info-top" aria-live="polite">Page 1 of 1</span>
+            <button id="next-page-top" aria-label="Next page" type="button">
+              Next
+            </button>
+          </div>
+
+          <div id="employees-list" role="list"></div>
+
+          <div
+            id="pagination-bottom"
+            class="pagination"
+            role="navigation"
+            aria-label="Pagination"
+          >
+            <button
+              id="prev-page-bottom"
+              aria-label="Previous page"
+              type="button"
+            >
+              Previous
+            </button>
+            <span id="page-info-bottom" aria-live="polite">Page 1 of 1</span>
+            <button id="next-page-bottom" aria-label="Next page" type="button">
+              Next
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <aside class="aside">
+        <h2 class="statistics-title">Statistics</h2>
+        <div class="stats">
+          <div class="stat-item">
+            <strong>Total:</strong>
+            <span id="total-count">0</span>
+          </div>
+          <div class="stat-item">
+            <strong>Nice:</strong>
+            <span id="positive-count">0</span>
+          </div>
+          <div class="stat-item">
+            <strong>Naughty:</strong>
+            <span id="negative-count">0</span>
+          </div>
+        </div>
+
+        <h3 class="recently-viewed-title">Recently Viewed</h3>
+        <ul id="recent-employees" class="recent-employees-list"></ul>
+      </aside>
+
+      <footer class="footer">
+        <p>2025-2026 | Made by MiniTroopers</p>
+      </footer>
+
+      <script type="module" src="/src/main.js"></script>
+    </div>
+  </body>
+</html>

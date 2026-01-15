@@ -1,0 +1,89 @@
+.employee-details {
+  display: none;
+  padding: var(--spacing-medium);
+}
+
+.employee-details.expanded {
+  display: flex;
+  animation: 0.3s ease-in-out;
+}
+
+.accordion-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.accordion-icon.rotate {
+  display: inline-block;
+  transform: rotate(180deg);
+}
+
+.employee-details.expanded {
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+}
+
+.employee-header[description-expanded=true] {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+}
+
+.employee-header[description-expanded=true] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.employee-header {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  border-radius: 5px;
+  border-width: 1px;
+  border: 1px solid var(--color-border);
+}
+.employee-header .employee-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.employee-header .status-badge {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.employee-header .naughty-badge {
+  border-radius: 10px;
+  color: var(--color-snow-white);
+  background-color: var(--color-christmas-red);
+}
+.employee-header .good-badge {
+  border-radius: 10px;
+  color: var(--color-snow-white);
+  background-color: var(--color-christmas-green);
+}
+
+.employee-details.expanded dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  -moz-column-gap: var(--spacing-small);
+       column-gap: var(--spacing-small);
+  row-gap: var(--spacing-small);
+  margin: 10px;
+}
+.employee-details.expanded dl dt {
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-small);
+}
+
+.bi-chevron-down {
+  font-size: 1.2rem;
+}/*# sourceMappingURL=employee-card.css.map */
