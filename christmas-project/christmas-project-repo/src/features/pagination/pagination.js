@@ -8,6 +8,9 @@ import {
 
 import { renderEmployeeList } from '../employee-list/employee-list.js';
 
+const NEXT = 'next';
+const PREV = 'prev';
+
 const nextPageButtons = document.querySelectorAll(
   '#next-page-top, #next-page-bottom'
 );
@@ -66,9 +69,9 @@ export function handlePageChange(direction) {
   const totalPages = Math.ceil(employees.length / itemsPerPage);
 
   let newPage = currentPage;
-  if (direction === 'next' && currentPage < totalPages) {
+  if (direction === NEXT && currentPage < totalPages) {
     newPage++;
-  } else if (direction === 'prev' && currentPage > 1) {
+  } else if (direction === PREV && currentPage > 1) {
     newPage--;
   }
 
@@ -82,10 +85,10 @@ export function handlePageChange(direction) {
 
 export function paginationEventListeners() {
   nextPageButtons.forEach((button) => {
-    button.addEventListener('click', () => handlePageChange('next'));
+    button.addEventListener('click', () => handlePageChange(NEXT));
   });
 
   prevPageButtons.forEach((button) => {
-    button.addEventListener('click', () => handlePageChange('prev'));
+    button.addEventListener('click', () => handlePageChange(PREV));
   });
 }
