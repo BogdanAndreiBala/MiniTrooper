@@ -15,8 +15,8 @@
         <p>Review employees' behavior and manage gift delivery</p>
       </header>
 
-      <nav class="nav">
-        <h2 class="nav-title">Filter Employees</h2>
+      <div class="filter-area">
+        <h2 class="filter-area-title">Filter Employees</h2>
         <form id="filter-form">
           <div class="filter-group filter-status">
             <label for="status-filter">Status:</label>
@@ -42,7 +42,7 @@
             <button type="button" id="reset-filters">Reset</button>
           </div>
         </form>
-      </nav>
+      </div>
 
       <main class="main">
         <section class="results-section">
@@ -50,10 +50,10 @@
             Employees List
             <i class="bi bi-dot"></i>
           </h2>
-          <p id="result-count">
+          <div id="result-count">
             <span class="result-label">Results:</span>
             <span id="result-number" aria-live="polite">0</span>
-          </p>
+          </div>
 
           <div
             id="pagination-top"
