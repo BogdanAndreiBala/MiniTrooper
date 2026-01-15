@@ -1,4 +1,3 @@
-//  HELPER COMMENT: Here we don't have a starter code snippet :P
 import { getAllEmployees, setFilteredEmployees } from '../../state/state.js';
 import { renderEmployeeList } from '../employee-list/employee-list.js';
 import { getPaginatedEmployees } from '../pagination/pagination.js';
@@ -7,6 +6,7 @@ const filterForm = document.getElementById('filter-form');
 const statusSelect = document.getElementById('status-filter');
 const searchFilter = document.getElementById('search-filter');
 const resetButton = document.getElementById('reset-filters');
+const MIN_SEARCH_LENGHT = 2;
 
 function applyFilters(event) {
   // Prevent form submission
@@ -15,12 +15,6 @@ function applyFilters(event) {
   }
 
   let selectedStatus = statusSelect.value;
-  if (selectedStatus.includes('positive')) {
-    selectedStatus = 'good';
-  }
-  if (selectedStatus.includes('negative')) {
-    selectedStatus = 'naughty';
-  }
   const allData = getAllEmployees();
 
   const matchedEmployees = allData.filter((employee) => {
@@ -31,7 +25,7 @@ function applyFilters(event) {
 
     let matchesSearch = true;
     const searchValue = searchFilter.value.toLowerCase().trim();
-    if (searchValue.length >= 2) {
+    if (searchValue.length >= MIN_SEARCH_LENGHT) {
       const nameEmployee = employee.name.toLowerCase().includes(searchValue);
       const presentEmployee = employee.desiredPresent
         .toLowerCase()

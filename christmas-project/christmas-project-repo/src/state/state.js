@@ -2,6 +2,8 @@
 // use the provided getter and setter functions to interact with the state
 // add your own if u need more functionality ;)
 
+const RECENTLY_VIEWED_LIMIT = 5;
+
 let state = {
   allEmployees: [],
   filteredEmployees: [],
@@ -115,7 +117,7 @@ export function addToRecentlyViewed(employeeId) {
   newRecentlyViewed = newRecentlyViewed.filter((id) => id !== employeeId);
   newRecentlyViewed.unshift(employeeId);
 
-  if (newRecentlyViewed.length > 5) {
+  if (newRecentlyViewed.length > RECENTLY_VIEWED_LIMIT) {
     newRecentlyViewed.pop();
   }
 
