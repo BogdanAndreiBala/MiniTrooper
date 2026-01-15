@@ -6,7 +6,7 @@ const filterForm = document.getElementById('filter-form');
 const statusSelect = document.getElementById('status-filter');
 const searchFilter = document.getElementById('search-filter');
 const resetButton = document.getElementById('reset-filters');
-const MIN_SEARCH_LENGHT = 2;
+const MIN_SEARCH_LENGTH = 2;
 
 function applyFilters(event) {
   // Prevent form submission
@@ -25,7 +25,7 @@ function applyFilters(event) {
 
     let matchesSearch = true;
     const searchValue = searchFilter.value.toLowerCase().trim();
-    if (searchValue.length >= MIN_SEARCH_LENGHT) {
+    if (searchValue.length >= MIN_SEARCH_LENGTH) {
       const nameEmployee = employee.name.toLowerCase().includes(searchValue);
       const presentEmployee = employee.desiredPresent
         .toLowerCase()
