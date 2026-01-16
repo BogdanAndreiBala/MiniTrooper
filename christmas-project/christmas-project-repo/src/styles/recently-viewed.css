@@ -1,0 +1,13 @@
+.recent-employees-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}/*# sourceMappingURL=recently-viewed.css.map */

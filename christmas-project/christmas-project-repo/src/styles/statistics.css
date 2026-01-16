@@ -1,0 +1,27 @@
+.recently-viewed-title {
+  color: var(--color-christmas-red);
+  font-size: 16px;
+}
+
+.statistics-title {
+  color: var(--color-christmas-red);
+  font-size: 24px;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+  padding: var(--spacing-small);
+  padding-left: 0;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-small);
+  background-color: var(--color-light-gray);
+}
+.stat-item strong {
+  color: var(--color-christmas-green);
+}/*# sourceMappingURL=statistics.css.map */
