@@ -20,36 +20,56 @@ const LAST_COMIC_BUTTONS = document.querySelectorAll(
 const FIRST = 'first';
 const LATEST = 'latest';
 
+function updateNavigationButtons() {
+  const { prev, next, total } = getState() || {};
+  const isFirst = !prev || prev <= 0;
+  const isLast = !next || next <= 0;
+  const isOnlyOne = !total || total <= 1;
+
+  FIRST_COMIC_BUTTONS.forEach((b) => (b.disabled = isFirst));
+  PREV_COMIC_BUTTONS.forEach((b) => (b.disabled = isFirst));
+  LAST_COMIC_BUTTONS.forEach((b) => (b.disabled = isLast));
+  NEXT_COMIC_BUTTONS.forEach((b) => (b.disabled = isLast));
+  RANDOM_COMIC_BUTTONS.forEach((b) => (b.disabled = isOnlyOne));
+}
+
 export function navigationEventListeners() {
   FIRST_COMIC_BUTTONS.forEach((button) => {
-    button.addEventListener('click', () => loadComic(null, FIRST));
+    button.addEventListener('click', async () => {
+      await loadComic(null, FIRST);
+      updateNavigationButtons();
+    });
   });
 
   LAST_COMIC_BUTTONS.forEach((button) => {
-    button.addEventListener('click', () => {
-      loadComic(null, LATEST);
+    button.addEventListener('click', async () => {
+      await loadComic(null, LATEST);
+      updateNavigationButtons();
     });
   });
 
   NEXT_COMIC_BUTTONS.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async () => {
       const next = getState().next;
-      loadComic(next, null);
+      await loadComic(next, null);
+      updateNavigationButtons();
     });
   });
 
   PREV_COMIC_BUTTONS.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async () => {
       const prev = getState().prev;
-      loadComic(prev, null);
+      await loadComic(prev, null);
+      updateNavigationButtons();
     });
   });
 
   RANDOM_COMIC_BUTTONS.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', async () => {
       const total = getState().total;
       const randomIndex = Math.floor(Math.random() * total) + 1;
-      loadComic(randomIndex, null);
+      await loadComic(randomIndex, null);
+      updateNavigationButtons();
     });
   });
 }

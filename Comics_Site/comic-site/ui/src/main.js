@@ -1,5 +1,7 @@
 import './styles/main.css';
 import './styles/variables.css';
+import './styles/buttons.css';
+import './styles/error-toast.css';
 
 import { subscribe } from './state/state';
 import { updateUi } from './ui/render-page.js';
@@ -8,4 +10,6 @@ import { loadComic } from './controller/comic-controller.js';
 
 subscribe(updateUi);
 navigationEventListeners();
+
 loadComic(null, 'random');
+//loadComic(999999, null);

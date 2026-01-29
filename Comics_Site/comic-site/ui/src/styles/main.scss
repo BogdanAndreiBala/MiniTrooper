@@ -102,21 +102,6 @@ a {
   margin: 12px 0;
 }
 
-.comic-nav button {
-  background-color: var(--color-bg);
-  color: var(--nav-text);
-  border-radius: 4px;
-  border: 1px solid #000;
-  padding: 4px 12px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-
-.comic-nav button:hover {
-  background-color: var(--color-bg);
-}
-
 //image
 .comic-container img {
   max-width: 100%;
