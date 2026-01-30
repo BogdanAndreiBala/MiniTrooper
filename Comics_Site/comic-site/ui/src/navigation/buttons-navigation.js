@@ -22,7 +22,7 @@ const LATEST = 'latest';
 
 function updateNavigationButtons() {
   const { prev, next, total } = getState() || {};
-  const isFirst = !prev || prev <= 0;
+  const isFirst = prev === null || prev < 0;
   const isLast = !next || next <= 0;
   const isOnlyOne = !total || total <= 1;
 

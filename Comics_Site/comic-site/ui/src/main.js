@@ -11,5 +11,13 @@ import { loadComic } from './controller/comic-controller.js';
 subscribe(updateUi);
 navigationEventListeners();
 
-loadComic(null, 'random');
+const lastViewedComic = localStorage.getItem('lastViewedComic');
+if (lastViewedComic) {
+  const { comic } = JSON.parse(lastViewedComic);
+  const index = comic.index;
+  loadComic(index);
+} else {
+  loadComic(null, 'random');
+}
+
 //loadComic(999999, null);

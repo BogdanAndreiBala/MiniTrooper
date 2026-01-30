@@ -8,6 +8,9 @@ const ERROR_MSG = document.getElementById('errorMessage');
 const ERROR_ICON = document.getElementById('errorIcon');
 const CLOSE_BTN = document.getElementById('closeToast');
 
+const TIMEOUT_DURATION = 4000;
+let toastTimeout;
+
 if (CLOSE_BTN) {
   CLOSE_BTN.addEventListener('click', () => {
     ERROR_TOAST.classList.add('hidden');
@@ -50,7 +53,16 @@ export function updateUi(state) {
       ERROR_ICON.className = `bi ${icon}`;
     }
     if (ERROR_TOAST) {
+      if (toastTimeout) {
+        clearTimeout(toastTimeout);
+      }
+
+      ERROR_TOAST.style.display = 'flex';
       ERROR_TOAST.classList.remove('hidden');
+
+      toastTimeout = setTimeout(() => {
+        ERROR_TOAST.classList.add('hidden');
+      }, TIMEOUT_DURATION);
     }
 
     COMIC_TITLE.textContent = '...';

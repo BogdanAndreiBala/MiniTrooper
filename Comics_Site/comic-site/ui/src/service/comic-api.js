@@ -34,7 +34,24 @@ async function fetchComic(url) {
 }
 
 export async function fetchComicByIndex(index) {
-  return fetchComic(`${BASE_URL}/comics/${index}`);
+  const cacheKey = `comic_${index}`;
+  const cacheData = sessionStorage.getItem(cacheKey);
+  if (cacheData) {
+    localStorage.setItem('lastViewedComic', cacheData);
+    return {
+      data: JSON.parse(cacheData),
+      error: null,
+    };
+  }
+
+  const result = await fetchComic(`${BASE_URL}/comics/${index}`);
+
+  if (!result.error && result.data) {
+    const jsonString = JSON.stringify(result.data);
+    sessionStorage.setItem(cacheKey, jsonString);
+    localStorage.setItem('lastViewedComic', jsonString);
+  }
+  return result;
 }
 
 export async function fetchComicByPosition(position) {
