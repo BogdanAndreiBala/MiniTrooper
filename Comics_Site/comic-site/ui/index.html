@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XKCD Clone</title>
+  </head>
+
+  <body>
+    <div class="grid-container">
+      <nav class="box box-left-nav">
+        <ul class="links-list">
+          <li><a href="#">Archive</a></li>
+          <li><a href="#">What If?</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Feed</a>•<a href="#">Email</a></li>
+          <li><a href="#">TW</a>•<a href="#">FB</a>•<a href="#">IG</a></li>
+          <li><a href="#">-Books-</a></li>
+          <li><a href="#">What If? 2</a></li>
+          <li><a href="#">WI?</a>•<a href="#">TE</a>•<a href="#">HT</a></li>
+        </ul>
+      </nav>
+
+      <header class="box header-box">
+        <div class="header-top">
+          <div class="logo">xkcd</div>
+          <div class="motto">
+            A webcomic of romance,
+            <br />
+            sarcasm, math, and language.
+          </div>
+        </div>
+        <div class="header-news">
+          XKCD updates every Monday, Wednesday, and Friday.
+        </div>
+      </header>
+
+      <main class="box comic-box">
+        <h2 id="comicTitle">Comic Title</h2>
+
+        <div class="comic-nav">
+          <button id="firstButton">|&lt;</button>
+          <button id="prevButton">&lt; Prev</button>
+          <button id="randomButton">Random</button>
+          <button id="nextButton">Next &gt;</button>
+          <button id="lastButton">&gt;|</button>
+        </div>
+
+        <div class="comic-container">
+          <img id="comicImage" src="" alt="Comic loading..." />
+        </div>
+
+        <div class="comic-nav">
+          <button id="firstButtonBottom">|&lt;</button>
+          <button id="prevButtonBottom">&lt; Prev</button>
+          <button id="randomButtonBottom">Random</button>
+          <button id="nextButtonBottom">Next &gt;</button>
+          <button id="lastButtonBottom">&gt;|</button>
+        </div>
+
+        <div class="comic-links">
+          Permanent link to this comic:
+          <a href="#" id="permLink"></a><br />
+          Image URL (for hotlinking/embedding):
+          <a href="#" id="imgLink"></a>
+        </div>
+      </main>
+
+      <footer class="box box-footer">
+        <div class="footer-nav">
+          <a href="#">RSS Feed</a> - <a href="#">Atom Feed</a> -
+          <a href="#">Email</a>
+        </div>
+        <div class="footer-text">
+          <p>Comics I enjoy: Three Word Phrase, SMBC, Dinosaur Comics...</p>
+          <p>Other things: Tips on technology and government...</p>
+        </div>
+      </footer>
+    </div>
+
+    <div id="errorToast" class="toast hidden" style="display: none">
+      <i id="errorIcon" class="bi bi-exclamation-triangle-fill"></i>
+      <span id="errorMessage">Something went wrong</span>
+      <button id="closeToast"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
